@@ -67,6 +67,15 @@ def view_extrato(request):
  
     return render(request, 'view_extrato.html', {'valores': valores, 'contas': contas, 'categorias': categorias})
 
+
+# def view_extrato(request):
+#     contas = Conta.objects.all()
+#     categorias = Categoria.objects.all()
+        
+#     valores = Valores.objects.filter(data__month=datetime.now().month)
+ 
+#     return render(request, 'view_extrato.html', {'valores': valores, 'contas': contas, 'categorias': categorias})
+
 def exportar_pdf(request):
     valores = Valores.objects.filter(data__month=datetime.now().month)
     contas = Conta.objects.all()
